@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif; /* A good standard professional font */
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-800 bg-white;
+  }
+}
+
+@layer utilities {
+  /* Custom colors matching the site vibes */
+  .text-prodesk-blue { color: #0056b3; }
+  .bg-prodesk-blue { background-color: #0056b3; }
+  .hover\:text-prodesk-blue:hover { color: #0056b3; }
+}
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
