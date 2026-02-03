@@ -49,14 +49,12 @@ export default function Careers() {
   }
 
   setLoading(true);
-  // ... rest of your Supabase code
+  
 
     try {
-      // 1. Clean filename (replace spaces with underscores)
       const fileExt = file.name.split('.').pop();
       const fileName = `${Date.now()}_${formData.name.replace(/\s+/g, '_')}.${fileExt}`;
 
-      // 2. Upload File to Supabase Storage
       const { data: uploadData, error: uploadError } = await supabase
         .storage
         .from('resumes')
@@ -64,13 +62,11 @@ export default function Careers() {
 
       if (uploadError) throw new Error("Upload Error: " + uploadError.message);
 
-      // 3. Get Public URL
       const { data: urlData } = supabase
         .storage
         .from('resumes')
         .getPublicUrl(fileName);
 
-      // 4. Save Applicant Data to Database
       const { error: dbError } = await supabase
         .from('applicants')
         .insert([
