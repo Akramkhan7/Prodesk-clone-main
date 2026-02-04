@@ -82,7 +82,6 @@ export default function Careers() {
 
       if (dbError) throw new Error("Database Error: " + dbError.message);
 
-      // 5. Success
       setSuccess(true);
       setFormData({ name: '', email: '', phone: '', position: '', linkedin: '' });
       setFile(null);
@@ -98,7 +97,6 @@ export default function Careers() {
   return (
     <PageLayout heroImageUrl={heroImage} heroTitle={title} sectionHeading={heading}>
       
-      {/* --- TEXT CONTENT --- */}
       <p>
         <strong className="text-gray-800 font-semibold block mb-2">Build the Future. Build Your Legacy.</strong>
       </p>
@@ -107,7 +105,6 @@ export default function Careers() {
         Whether you are a seasoned architect or a fresh graduate, Prodesk offers you a platform to challenge the status quo.
       </p>
 
-      {/* --- APPLICATION FORM --- */}
       <div className="mt-16 pt-10 border-t border-gray-200">
         <h3 className="text-2xl font-bold uppercase tracking-wide text-gray-900 mb-2">READY TO JOIN US?</h3>
         <p className="text-gray-600 mb-8">Don't wait for the perfect opportunity. Create it.</p>
@@ -123,7 +120,6 @@ export default function Careers() {
         ) : (
           <form onSubmit={handleSubmit} className="bg-gray-50 p-8 rounded-lg border border-gray-100 space-y-6">
             
-            {/* Name & Email */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Full Name</label>
@@ -135,7 +131,6 @@ export default function Careers() {
               </div>
             </div>
 
-            {/* Phone & Position */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Phone Number</label>
@@ -154,7 +149,6 @@ export default function Careers() {
               </div>
             </div>
 
-            {/* LinkedIn & File */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-xs font-bold uppercase text-gray-500 mb-2">LinkedIn URL</label>
